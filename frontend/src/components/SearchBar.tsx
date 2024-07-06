@@ -34,8 +34,8 @@ const SearchBar = () =>{
     const maxDate = new Date();
     maxDate.setFullYear(maxDate.getFullYear()+1)
     return (
-        <form onSubmit={handleSubmit} className="-mt-8 p-3 bg-orange-400 rounded shadow-md grid grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 items-center gap-4">
-            <div className="flex flex-row items-center flex-1 bg-white p-2">
+        <form onSubmit={handleSubmit} className="-mt-8 mx-2 p-3 bg-orange-400 rounded shadow-md grid grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 items-center gap-4">
+            <div className="flex flex-row items-center flex-1 bg-white p-2 ">
                 <MdTravelExplore size={25} className="mr-2"/>
                 <input placeholder="Where are you going?" className="text-md w-full focus:outline-none" value={destination} onChange={(e)=>setDestination(e.target.value)}/>
             </div>
@@ -50,10 +50,10 @@ const SearchBar = () =>{
                 </label>
             </div>
             <div >
-                <DatePicker selected={checkIn} onChange={(date)=>setCheckIn(date as Date)} selectsStart startDate={checkIn} endDate={checkOut} minDate={minDate} maxDate={maxDate} placeholderText="Check-in Date" className="min-w-full bg-white p-2 focus:outline-none" wrapperClassName="min-w-full"/>
+                <DatePicker selected={checkIn} onChange={(date)=>setCheckIn(date as Date)} selectsStart startDate={checkIn} endDate={checkOut} minDate={minDate} maxDate={maxDate} placeholderText="Check-in Date" className="max-w-[180px] bg-white p-2 focus:outline-none md:min-w-full" wrapperClassName="min-w-full"/>
             </div>
             <div >
-                <DatePicker selected={checkOut} onChange={(date)=>setCheckOut(date as Date)} selectsStart startDate={checkIn} endDate={checkOut} minDate={minDate} maxDate={maxDate} placeholderText="Check-out Date" className="min-w-full bg-white p-2 focus:outline-none" wrapperClassName="min-w-full"/>
+                <DatePicker selected={checkOut} onChange={(date)=>setCheckOut(date as Date)} selectsStart startDate={checkIn} endDate={checkOut} minDate={minDate} maxDate={maxDate} placeholderText="Check-out Date" className=" max-w-[180px] md:min-w-full bg-white p-2 focus:outline-none" wrapperClassName="min-w-full"/>
             </div >
 
             <div className="flex gap-1">
