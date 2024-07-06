@@ -122,7 +122,7 @@ router.post("/:hotelId/bookings",verifyToken,async(req:Request,res:Response)=>{
             return res.status(400).json({message:"payment intent mismatch"})
         }
 
-        if(paymentIntent.status != "succeeded"){
+        if(paymentIntent.status !== "succeeded"){
             return res.status(400).json({message:`payment intent not succeded. Status: ${paymentIntent.status}`
             })
         }
